@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Stupid JavaScript Compressor</title>
+<meta charset="utf-8"/>
+<style type="text/css">
+body { font-family: Arial, Helvetica, sans-serif; }
+textarea { width: 99%; height: 90%; }
+span { border: 1px solid #666666; padding: 0px 2px; }
+</style>
+<script type="text/javascript">
+function jsmin(data) { return data.replace(/(\\.|'[^\n]*?[^\\]'|"[^\n]*?[^\\]"|(\/\/)[^\n]*\n|(\/\*)[\x00-\xff\x0000-\xffff]*?[^\\]\*\/)/g, function(f, x, y, z) { return (!y&&!z ? x : ''); }).replace(/(''|""|'[^\n]*?[^\\]'|"[^\n]*?[^\\]"|\sinstanceof\s|var\s|return\s|typeof\s|[\r\n\s]+)/g, function(x){ return /\S/.test(x) ? x : ''; })};
+window.onload=window.onresize=function(){document.getElementById('js').style.height=(window.innerHeight-128)+'px';}
+</script>
+</head>
+<body>
+<h1>Stupid JavaScript Compressor</h1>
+<textarea id="js"></textarea><br/>
+<span onclick="var js=document.getElementById('js');js.value=jsmin(js.value);">compress</span>
+</body>
+</html>
