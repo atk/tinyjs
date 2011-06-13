@@ -302,17 +302,17 @@ ready=setInterval(function() {
     unnamed functions will be temporarily named; name will be deleted for security reasons after 1 s (past timeout)
     t.j([url:String], [callback:String(Function name), Function], [timeout,Integer(ms, optional)]);
 */
-t.j=function(u,c,t,f,s){
+t.j=function(u,c,T,f,s){
     f=typeof c==='function';
     // Name function if unnamed, Remove formerly unnamed function's name
     if (f) {
         window[(f='fn'+(Math.random()*1E8|0)+(new Date()*1))]=[c,c=f][0];
-        setTimeout(function() { window[c] = u; }, (+t)+5000);
+        setTimeout(function() { window[c] = u; }, (+T)+5000);
     }
     // Create Script-Element with url and add it to body
     document.body.appendChild(s=t.x(document.createElement('script'), {type: 'text/javascript', src: u+(c||'')}));
     // Timeout handling
-    t && (setTimeout(function() { document.body.removeChild(s); }, t));
+    T && (setTimeout(function() { document.body.removeChild(s); }, T));
 };
 /*
     ajax:
