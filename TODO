@@ -1,0 +1,7 @@
+TODO
+
+- Split tiny.js into different parts + Tool to combine those parts
+- Allow for different Selector engines (default, querySelectorAll, simple)
+- Remove unused characters
+- Import plugins
+- Open Wiki (add Cheat Sheets)
