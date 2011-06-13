@@ -123,7 +123,7 @@ t.cf={
 };
 // Version and license informations
 t.version='0.0.2';
-t.license='(c) 2010 Alex Kloss <alexthkloss@web.de>, LGPL2';
+t.license='(c) 2010-2011 Alex Kloss <alexthkloss@web.de>, LGPL2';
 // Prototypical Selector Result Methods - can be easily changed and extended
 t.prototype=t._={
     // Iterate
