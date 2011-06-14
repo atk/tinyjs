@@ -9,7 +9,7 @@ textarea { width: 99%; height: 90%; }
 span { border: 1px solid #666666; padding: 0px 2px; }
 </style>
 <script type="text/javascript">
-function jsmin(data) { return data.replace(/(\\.|'[^\n]*?[^\\]'|"[^\n]*?[^\\]"|(\/\/)[^\n]*\n|(\/\*)[\x00-\xff\x0000-\xffff]*?[^\\]\*\/)/g, function(f, x, y, z) { return (!y&&!z ? x : ''); }).replace(/(''|""|'[^\n]*?[^\\]'|"[^\n]*?[^\\]"|\sinstanceof\s|\sin\s|var\s|return\s|typeof\s|[\r\n\s]+)/g, function(x){ return /\S/.test(x) ? x : ''; })};
+function jsmin(data) { return data.replace(/(\\.|\/\*\*\/|'[^\n]*?[^\\]'|"[^\n]*?[^\\]"|(\/\/)[^\n]*\n|(\/\*)[\x00-\xff\x0000-\xffff]*?[^\\]\*\/)/g, function(f, x, y, z) { return (!y&&!z&&x!='/**/' ? x : ''); }).replace(/(''|""|'[^\n]*?[^\\]'|"[^\n]*?[^\\]"|\/[^\/\r\n]*?[^\\]\/|\sinstanceof\s|\sin\s|var\s|return\s|typeof\s|new\s|function\s+[^(]|[\r\n\s]+)/g, function(x){ return /\S/.test(x) ? x.replace(/(function\s)\s+/g, "$1") : ''; })};
 window.onload=window.onresize=function(){document.getElementById('js').style.height=(window.innerHeight-128)+'px';}
 </script>
 </head>
