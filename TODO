@@ -4,4 +4,5 @@ TODO
 - Allow for different Selector engines (default, querySelectorAll, simple)
 - Remove unused characters
 - Import plugins
-- Open Wiki (add Cheat Sheets)
+- Fill Wiki
+- Add Cheat Sheets, Test cases to the homepage
