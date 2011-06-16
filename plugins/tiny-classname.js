@@ -10,11 +10,12 @@ t._.C=function(
     r  // Placeholder for RegExp
 ) {
     // build regular expression to find className
-    r=new RegExp('\\b'+C+'\\b', 'g');
+    r=new RegExp('\\b'+(C||c)+'\\b', 'g');
     // either search for classname and return true/false
     return (''+c===c ? r.test(this[0].className) :
-        // or set className
-        c ? t.i(this, function(i,n) { n.className+=' '+C }, !0) :
-        // or remove className
-        t.i(this, function(i,n) { n.className=n.className.replace(r, '');} !0);
+        // or set / remove className
+        this.i(c ? 
+            function(i,n) { n.className+=' '+C } : 
+            function(i,n) { n.className=n.className.replace(r, '') })
+        );
 };
