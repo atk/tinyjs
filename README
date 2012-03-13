@@ -1,3 +1,4 @@
 === tiny js
 
-tiny.js is a tiny yet complete JS toolkit, featuring Selectors, Methods, Events, Networking and Helpers. Supported browsers are FF2-5, IE6-9, Opera 10-11 and any Safari/Chrome.
+tiny.js is a tiny yet complete JS toolkit, featuring Selectors, Methods, Events, Networking and Helpers. 
+Supported browsers are FF2-11, IE6-9, Opera 10-11 and any Safari/Chrome.
