@@ -202,13 +202,13 @@ t.i=function(o, c, a, z) {
     eXtend objects (Arrays will be concatenated), if an Object is used to extend an array, the keys will be omittedocument.
     t.x([object:Object], [object2:Object], [object3:Object, optional], ...);
 */
-t.x=function() {
+t.x=function(o) {
     // Preparation: base object, arguments iterator, object or array, internal function
-    var b=arguments[0]||{}, o, i=0, y=b instanceof Array;
+    var b=o||{}, i=0, y=b instanceof Array;
     // return if nothing extendable present
     if (!b.hasOwnProperty) { return b }
     // each argument is used as object to extend the first one; we use our iterator to save space
-    while (o=arguments[++i]) { t.i(o, y?function(k, v) { b.push(v) }:function(k, v) { b[k]=v; }, y) }
+    while (o=arguments[++i]||{}) { t.i(o, y?function(k, v) { b.push(v) }:function(k, v) { b[k]=v; }, y) }
     return b
 };
 /*
